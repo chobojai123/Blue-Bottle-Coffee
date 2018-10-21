@@ -1,13 +1,226 @@
-.deleteIcon.right {
-  font-size: 19px;
+*,
+*::before,
+*::after, {
   margin: 0;
-  margin-left: 0px;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-.sent, .last {
-  text-align: right;
+html {
+  overflow: hidden;
+  height: 100%;
+  font-size: 62.5%;
 }
 
-.cardSection{
-  padding: 10px !important;
+body {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 2rem;
+  overflow: auto;
+}
+
+hr {
+  width: 97%;
+  border-color: #999;
+}
+
+h5 {
+  padding: 1rem 0 0 2rem;
+  text-align: left;
+  color: #01a1dd;
+  text-transform: uppercase;
+}
+
+table>thead>tr>th {
+  border-bottom: 4px solid #01a1dd;
+}
+table>tbody>tr>td{
+  border-top: 1px solid #999;
+}
+
+
+tr:nth-child(even) {
+  background-color: #eee;
+}
+
+td {
+  overflow: hidden;
+  color: #999;
+}
+
+th {
+  font-weight: 700;
+  font-size: 100%;
+  color: black;
+}
+
+.table {
+  box-sizing: border-box;
+  border-spacing: 0;
+  border: 1px solid #999;
+  width: 99%;
+}
+
+table > tbody > tr > td, table th {
+  text-align: center; 
+  padding: 0.7rem;
+}
+
+
+th:nth-last-child(1),
+td:nth-last-child(1) {
+    text-align: center;
+}
+
+.th-coffee {
+  width: 15%
+}
+
+.th-method {
+  width: 18%
+}
+
+.th-cases{
+  width: 14%
+}
+
+.th-packets{
+  width: 14%
+}
+
+.th-shipDate {
+  width: 18%
+}
+
+.th-orderNum {
+  width: 14%;
+}
+
+.td-orderNum {
+  color: #01a1dd;
+}
+
+.th-view {
+  width: 14%;
+}
+
+.td-view {
+  color: #01a1dd;
+}
+
+.data {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.header {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  margin: 0 0 1rem 0;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.title {
+  color: black;
+  margin: 0px;
+  display: inline-block;
+  margin-left: 3rem;
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.closeBtn {
+  border: 0;
+  float: right;
+  font-size: 1.6rem;
+}
+
+.date {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.7rem;
+  background-color: #eee;
+  padding: 0.5rem;
+}
+
+.createOrder {
+  text-transform: uppercase;
+  float: right;
+  background-color: #01a1dd;
+  color: white;
+  padding: 0.7rem 1.3rem;
+  margin-right: 0.8rem;
+}
+
+.required-field::after {
+  content: "*";
+  color: red;
+}
+
+.coffees {
+  width: 48%;
+  display: inline-block;
+}
+
+.methods {
+  width: 49%;
+  float: right;
+  display: inline-block;
+}
+
+.dates {
+  width: 48%;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.number {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cases {
+  width: 23%;
+  margin-top: 1rem;
+  margin-right: 0.2rem;
+}
+
+.packets {
+  width: 23%;
+  margin-top: 1rem;
+}
+
+.notes {
+  margin-top: 1rem;
+}
+
+input {
+  border: 1px solid #999 !important;
+  margin: 0 !important;
+}
+
+.rw-widget-input {
+  border: none !important;
+  margin: 0 !important;
+  height: 46px !important;
+}
+
+.rw-widget-container {
+  border: none !important;
+}
+
+.rw-widget {
+  border: 1px solid #999 !important;
+}
+
+.test {
+  width: 50px;
+  height: 50px;
+}
+
+.yo {
+  background-color: blue;
+  width: 50px;
+  height: 50px;
 }

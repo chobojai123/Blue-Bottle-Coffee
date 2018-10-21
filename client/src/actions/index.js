@@ -1,34 +1,16 @@
 import axios from 'axios';
-import { FETCH_USER, FETCH_SURVEYS } from './types';
+import { FETCH_ORDERS, SUBMIT_ORDER } from './types';
 
-export const fetchUser = () => async dispatch => {
-  const res = await axios.get('/api/current_user');
+export const fetchOrders = () => async dispatch => {
+  const res = await axios.get('/api/orders');
 
-  dispatch({ type: FETCH_USER, payload: res.data });
+  dispatch({ type: FETCH_ORDERS, payload: res.data });
 };
 
-export const handleToken = token => async dispatch => {
-  const res = await axios.post('/api/stripe', token);
+export const submitOrder = values => async dispatch => {
+  console.log(values);
+  const res = await axios.post('/api/orders', values);
+  console.log(res);
 
-  dispatch({ type: FETCH_USER, payload: res.data });
-};
-
-export const submitSurvey = (values, history) => async dispatch => {
-  const res = await axios.post('/api/surveys', values);
-
-  history.push('/surveys');
-  dispatch({ type: FETCH_USER, payload: res.data });
-};
-
-export const fetchSurveys = () => async dispatch => {
-  const res = await axios.get('/api/surveys');
-
-  dispatch({ type: FETCH_SURVEYS, payload: res.data });
-};
-
-export const deleteSurvey = (id, callback) => async dispatch => {
-  const res = await axios.delete(`/api/surveys/${id}`);
-  await callback();
-
-  dispatch({ type: FETCH_SURVEYS, payload: id });
+  dispatch({ type: SUBMIT_ORDER, payload: res.data });
 };
