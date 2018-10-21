@@ -23,7 +23,11 @@ class Data extends Component {
             <td>{order.coffee}</td>
             <td>{order.cases}</td>
             <td>{order.packets}</td>
-            <td>{moment(order.shipDate).format('l')}</td>
+            <td>
+              {order.priority
+                ? `${moment(order.shipDate).format('l')}  *`
+                : moment(order.shipDate).format('l')}
+            </td>
             <td className="td-orderNum">{`#${order.orderNum}`}</td>
             <td className="td-view">
               <ion-icon name="eye" />

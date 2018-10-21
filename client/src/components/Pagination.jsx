@@ -32,7 +32,6 @@ class Pagination extends Component {
         <ReactPaginate
           previousLabel="previous"
           nextLabel="next"
-          breakLabel={<a href="">...</a>}
           breakClassName="break-me"
           pageCount={orders === null ? 5 : orders.length / 25}
           marginPagesDisplayed={2}

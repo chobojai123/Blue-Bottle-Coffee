@@ -7,7 +7,7 @@ import {
   renderDropdownList,
   renderInputField,
 } from './formOptions';
-import { submitOrder } from '../../actions';
+import * as actions from '../../actions';
 
 const coffees = ['Cold Brew', 'Drip', 'Iced Coffee'];
 const methods = ['Pour Over', 'Coffee Maker'];
@@ -16,9 +16,9 @@ const packets = [50];
 
 class OrderForm extends Component {
   onSubmit(values) {
-    const { submitOrder, closeModal } = this.props;
+    const { submitOrder, fetchOrders, closeModal } = this.props;
 
-    submitOrder(values);
+    submitOrder(values).then(() => fetchOrders());
     closeModal();
   }
 
@@ -70,7 +70,7 @@ class OrderForm extends Component {
           />
         </div>
         <div className="priority">
-          <Field name="checkbox" label="Priority" component={renderCheckBox} />
+          <Field name="priority" label="Priority" component={renderCheckBox} />
         </div>
       </div>
     );
@@ -94,7 +94,7 @@ class OrderForm extends Component {
 
 export default connect(
   null,
-  { submitOrder }
+  actions
 )(
   reduxForm({
     form: 'orderForm',

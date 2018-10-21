@@ -43,6 +43,8 @@ class HomePage extends Component {
   }
 
   render() {
+    const { modalIsOpen } = this.state;
+
     return (
       <div>
         <div className="header">
@@ -55,8 +57,9 @@ class HomePage extends Component {
         <button type="button" onClick={this.openModal} className="createOrder">
           Create order
         </button>
+
         <Modal
-          isOpen={this.state.modalIsOpen}
+          isOpen={modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
@@ -65,13 +68,11 @@ class HomePage extends Component {
           <button type="button" className="closeBtn" onClick={this.closeModal}>
             <ion-icon name="close" />
           </button>
-          <h4 ref={subtitle => (this.subtitle = subtitle)}>
-            Perfectly Ground Work Orders
-          </h4>
+          <h4>Perfectly Ground Work Orders</h4>
           <p>Instructional text would go here --</p>
+
           <OrderForm closeModal={this.closeModal} />
         </Modal>
-        <br />
         <Pagination />
       </div>
     );

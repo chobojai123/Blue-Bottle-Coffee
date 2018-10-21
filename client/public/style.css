@@ -245,7 +245,7 @@ p {
   margin-top: 2rem;
 }
 
-.pagination > a {
+.pagination>.active>a {
   z-index: -1;
 }
 
