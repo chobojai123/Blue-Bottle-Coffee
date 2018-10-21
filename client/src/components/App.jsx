@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-import HomePage from './HomePage';
+import HomePage from './HomePage.jsx';
 
 class App extends Component {
   componentDidMount() {

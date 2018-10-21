@@ -8,9 +8,7 @@ export const fetchOrders = () => async dispatch => {
 };
 
 export const submitOrder = values => async dispatch => {
-  console.log(values);
   const res = await axios.post('/api/orders', values);
-  console.log(res);
 
   dispatch({ type: SUBMIT_ORDER, payload: res.data });
 };

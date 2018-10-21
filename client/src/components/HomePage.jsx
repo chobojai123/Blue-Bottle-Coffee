@@ -5,12 +5,7 @@ import Modal from 'react-modal';
 import Pagination from './Pagination';
 import OrderForm from './modal/OrderForm';
 
-// import logo, { ReactComponent as ReactLogo } from './beer.svg';
-import logo, { ReactComponent as ReactLogo } from './logo.svg';
-import './App.css';
-
-console.log(ReactLogo);
-console.log(logo);
+import { ReactComponent as ReactLogo } from './img/beer.svg';
 
 const options = { month: 'short', day: 'numeric' };
 const date = new Date().toLocaleDateString('en-US', options);
@@ -50,11 +45,13 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <img src={logo} className="App-logo" alt="logo" />
-        {/* <ReactLogo /> */}
-        <h4 className="header">blue bottle coffee</h4>
+        <div className="header">
+          <ReactLogo className="logo" alt="logo" />
+          <h4 className="title">blue bottle coffee</h4>
+        </div>
+
         <span className="date">{date}</span>
-        <span className="title">Pefect Ground Work Orders</span>
+        <span className="system">Perfect Ground Work Orders</span>
         <button type="button" onClick={this.openModal} className="createOrder">
           Create order
         </button>

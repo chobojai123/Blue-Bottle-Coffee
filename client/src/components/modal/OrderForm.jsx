@@ -27,19 +27,19 @@ class OrderForm extends Component {
       <div>
         <div className="coffees">
           <label className="required-field">Coffee</label>
-          <Field name="coffees" component={renderDropdownList} data={coffees} />
+          <Field name="coffee" component={renderDropdownList} data={coffees} />
         </div>
 
         <div className="methods">
           <label className="required-field">Brew Method</label>
-          <Field name="methods" component={renderDropdownList} data={methods} />
+          <Field name="method" component={renderDropdownList} data={methods} />
         </div>
 
         <div className="number">
           <div className="dates">
             <label className="required-field">Ship Date</label>
             <Field
-              name="dates"
+              name="shipDate"
               component={renderDateTimePicker}
               showTime={false}
             />
@@ -69,9 +69,8 @@ class OrderForm extends Component {
             component={renderInputField}
           />
         </div>
-
-        <div>
-          <Field name="priority" label="priority" component={renderCheckBox} />
+        <div className="priority">
+          <Field name="checkbox" label="Priority" component={renderCheckBox} />
         </div>
       </div>
     );
