@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-class Data extends Component {
+export class Data extends Component {
   constructor(props) {
     super(props);
     this.renderOrders.bind(this.renderOrders);

@@ -7,7 +7,7 @@ import HomePage from './HomePage.jsx';
 export class App extends Component {
   componentDidMount() {
     const { fetchOrders } = this.props;
-    // fetchOrders(1);
+    fetchOrders(1);
   }
 
   render() {

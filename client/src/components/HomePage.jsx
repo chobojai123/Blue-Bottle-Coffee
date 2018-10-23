@@ -22,7 +22,7 @@ const customStyles = {
 
 // Modal.setAppElement('#root');
 
-class HomePage extends Component {
+export class HomePage extends Component {
   constructor() {
     super();
 
