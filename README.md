@@ -13,6 +13,7 @@ Data = component that renders our data from database
 
 ###### Description of any trade-offs you made
 
+I did not create as many tests as I wanted to as I got close to the 8 hour requirement and implementing Redux changed the way I wanted to approach this coding exercise as I was thinking of a bigger picture where there might be a lot more states needed in the React app as the order system gets scaled out. However, I do not believe I needed to use Redux in this specific project and I have not performed many unit testing under Redux. 
 
 ###### Description of how to run it locally
 
