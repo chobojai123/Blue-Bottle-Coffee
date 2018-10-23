@@ -1,33 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
+import { createMockStore } from 'redux-test-utils';
+import renderer from 'react-test-renderer';
 import '../setupTests';
+import configureStore from 'redux-mock-store';
 
-import { App } from './App';
+import ConnectedApp, { App } from './App';
 
-function setup() {
-  const props = {
-    fetchOrders = jest.fn()
-  }
-
-  const enzymeWrapper = mount(<App {...props} />)
-
-  return {
-    props,
-    enzymeWrapper
-  }
-}
+const mockStore = configureStore();
 
 describe('<App />', () => {
-
-  it('should render some routes', () => {
-    const { enzymeWrapper } = setup();
-    // const renderedComponent = shallow(<App actions={actions} />);
-    // expect(renderedComponent.find(Route).length).not.toBe(0);
+  test('should render some routes', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.exists()).toBe(true);
   });
 
-  it('should render some routes', () => {
-    const renderedComponent = shallow(<App />);
-    expect(renderedComponent.find(Route).length).not.toBe(0);
+  test('renders', () => {
+    const wrapper = shallow(<App store={mockStore({ actions: {} })} />);
+    expect(wrapper.exists()).toBe(true);
   });
 });
