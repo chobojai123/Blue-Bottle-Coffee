@@ -20,7 +20,7 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement('#root');
+// Modal.setAppElement('#root');
 
 class HomePage extends Component {
   constructor() {

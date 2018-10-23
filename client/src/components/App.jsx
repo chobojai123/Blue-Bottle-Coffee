@@ -4,7 +4,7 @@ import * as actions from '../actions';
 
 import HomePage from './HomePage.jsx';
 
-class App extends Component {
+export class App extends Component {
   componentDidMount() {
     const { fetchOrders } = this.props;
     fetchOrders(1);

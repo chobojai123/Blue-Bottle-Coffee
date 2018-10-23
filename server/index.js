@@ -2,14 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
-const passport = require('passport');
 const keys = require('../config/keys');
-const authRoutes = require('../routes/authRoutes.js');
-const billRoutes = require('../routes/billingRoutes.js');
-const surveyRoutes = require('../routes/surveyRoutes.js');
-require('../database//models/User');
-require('../database//models/Survey');
-require('../services/passport');
+const coffeeRoutes = require('../routes/coffeeRoutes.js');
+require('../database/Coffee');
 
 mongoose.connect(
   keys.mongoUri,
@@ -20,18 +15,8 @@ mongoose.connect(
 const app = express();
 
 app.use(bodyParser.json());
-app.use(
-  cookieSession({
-    maxAge: 30 * 24 * 60 * 60 * 1000,
-    keys: [keys.cookieKey],
-  })
-);
-app.use(passport.initialize());
-app.use(passport.session());
 
-authRoutes(app);
-billRoutes(app);
-surveyRoutes(app);
+coffeeRoutes(app);
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
